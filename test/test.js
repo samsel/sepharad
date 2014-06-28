@@ -1,7 +1,7 @@
 var sepharad = require("../sepharad");
 
 // test 1
-// sepharad();
+sepharad();
 
 // test 2
 var example = {
