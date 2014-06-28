@@ -1,12 +1,12 @@
 var sepharad = require("../sepharad");
 
 // test 1
-sepharad();
+// sepharad();
 
 // test 2
-// var example = {
-// 	url : "",
-// 	path: "lib/",
-// 	output: "report.html"
-// };
-// sepharad(example);
+var example = {
+	url : "https://github.com/krakenjs/kraken-js",
+	path: "lib/",
+	output: "report.html"
+};
+sepharad(example);
