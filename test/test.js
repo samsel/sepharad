@@ -4,9 +4,16 @@ var sepharad = require("../sepharad");
 sepharad();
 
 // test 2
-var example = {
+sepharad({
 	url : "https://github.com/krakenjs/kraken-js",
 	path: "lib/",
 	output: "report.html"
-};
-sepharad(example);
+});
+
+// test 3
+sepharad({
+	url : "https://github.com/krakenjs/kraken-js",
+	path: "lib/",
+	format: "cjs",
+	output: "report.html"
+});
