@@ -27,6 +27,8 @@ var sepharad = module.exports = function sepharad (options) {
 		}
 		//modify the path to be absolute to the downloaded dir
 		options.path = targetDirectory + "/" + options.path;
+		//modify the output path to be absolute to the sepharad root dir
+		options.output = __dirname + "/" + options.output;		
 		github.clean();
 		report.generate(options);
 	});	
