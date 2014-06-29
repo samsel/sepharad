@@ -4,7 +4,10 @@ sepharad
 Visualize the JS module dependencies from your Source Code in Github.
 
 
-###### This module is an extension to dependo (https://github.com/auchenberg/dependo).
+###### Sepharad is an extension to dependo (https://github.com/auchenberg/dependo#introduction).
+
+Sepharad extends dependo by enabling visualization of JS dependencies from a source 
+located in remote Github. The limitation with dependo is that the source must be in the local file system.
 
 Usage 
 -----
@@ -32,7 +35,6 @@ sepharad({
 
 ToDo 
 ----
-* complete documentation
 * write tests - mocha
 * make sephard independent of dependo
 * add a CLI feature for sepharad
