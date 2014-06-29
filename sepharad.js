@@ -1,26 +1,23 @@
 var validator = require("./lib/validator"),
-	example = require("./lib/example"),
 	Github = require('./lib/github'),
-	report = require('./lib/report');
+	report = require('./lib/report'),
+	sepharad;
 
-var sepharad = module.exports = function sepharad (options) {
+sepharad = module.exports = function sepharad (options) {
+
+	"use strict";
 
 	options = options || {};
 
-	var errors = validator.validate(options);
-	if (errors.length) {
-		validator.printErrors(errors);
-		example.print();
-		
-		return;
+	var hasError = validator.validate(options);
+	if (hasError) {
+		return;	
 	}
 
-	var github,
-		self = this;
+	var github = new Github(options.url,  options.branch),
+		onLoad;
 
-	github = new Github(options.url,  options.branch);
-
-	github.load(function (err, targetDirectory) {
+	onLoad = function (err, targetDirectory) {
 		if (err) {
 			console.dir(err);
 			return;
@@ -30,6 +27,8 @@ var sepharad = module.exports = function sepharad (options) {
 		//modify the output path to be absolute to the sepharad root dir
 		options.output = __dirname + "/" + options.output;		
 		github.clean();
-		report.generate(options);
-	});	
+		report.generate(options);		
+	};	
+
+	github.load(onLoad);	
 };
