@@ -7,6 +7,7 @@ sepharad();
 sepharad({
 	url : "https://github.com/krakenjs/kraken-js",
 	path: "lib/",
+	format: "wrong",
 	output: "report.html"
 });
 
@@ -15,5 +16,6 @@ sepharad({
 	url : "https://github.com/krakenjs/kraken-js",
 	path: "lib/",
 	format: "cjs",
+	exclude: "^node_modules",
 	output: "report.html"
 });
