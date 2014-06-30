@@ -1,13 +1,12 @@
 sepharad
 ========
 
-Visualize the JS module dependencies from your Source Code in Github.
+##### Visualize the JS module (AMD or CommonJS) dependencies from your Source Code in Github.
 
-
-###### Sepharad is an extension to dependo (https://github.com/auchenberg/dependo#introduction).
-
-Sepharad extends dependo by enabling visualization of JS dependencies from a source 
-located in remote Github. The limitation with dependo is that the source must be in the local file system.
+Sepharad is built on top of dependo (https://github.com/auchenberg/dependo#introduction). The 
+reason Sepharad was built was to overcome the limitation of dependo, which is that; the source code 
+must be in the local file system to generate dependencies. Sepharad overcomes that limitation by 
+enabling visualization of JS dependencies from source code located in remote Github.
 
 Usage 
 -----
@@ -30,6 +29,21 @@ sepharad({
   exclude: "^node_modules",
   output: "report.html"
 });
+
+```
+
+API 
+---
+```javascript
+
+    sepharad({
+    	 "url"     : <github url for the source>, (required)
+    	 "branch"  : <branch>, (optional and defaults to master)
+    	 "path"    : <file/dir in the source code from where dependencies need to be visualized>, (required)
+    	 "format"  : <format to parse (amd or cjs)>, (required)
+    	 "exclude" : <a regular expression for excluding files>, (optional and default is none)
+    	 "output"  : <file to save the generated dependency output html> (required)
+    });
 
 ```
 
