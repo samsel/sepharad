@@ -1,6 +1,6 @@
 {
   "name": "sepharad",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Visualize the JS module dependencies from your Source Code in Github",
   "main": "sepharad.js",
   "scripts": {
